@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import NavBar from './components/layout/nav';
+import Dash from './components/dashboard/dash'
+import ProjDetails from './components/project/projectDetails'
+import SignIn from './components/auth/signIn';
+import SignUp from './components/auth/signUp';
+import CreateHouse from './components/project/CreateHouse';
 
-function App() {
+class App extends Component{
+
+render() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <NavBar/>
+        <Switch>
+          <Route exact path = "/" component = {Dash} />
+          <Route path = "/project/:id" component = {ProjDetails} />
+          <Route path = "/signIn" component = {SignIn} />
+          <Route path = "/signup" component = {SignUp} />
+          <Route path = "/createhouse" component = {CreateHouse} />
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
 
+}
 export default App;
