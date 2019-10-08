@@ -4,20 +4,24 @@ import {firestoreConnect} from 'react-redux-firebase';
 import {compose} from 'redux';
 import {moment} from 'moment';
 
-const Profile = (props) => {
+class Profile extends Component {
 
+  state={
+    name: ""
+
+  }
+
+render(){
   return(
 
     <div className= "card-panel #bbdefb blue lighten-4 project-summary">
       <h5> Profile Data </h5>
 
-
-
-
     <div>
 
   )
 
+}
 }
 
 export default Profile;

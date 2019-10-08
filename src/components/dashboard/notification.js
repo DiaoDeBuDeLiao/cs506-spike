@@ -1,13 +1,62 @@
-import React from 'react';
+import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
+import {connect} from 'react-redux'
 
-const Notifications = () => {
-  return(
 
-        <div className= "card-panel #bbdefb blue lighten-4 project-summary">
-          <h5> Profile Data </h5>
-        </div>
-  )
+const Notifications = (props) => {
+
+  const {auth, profile,houses} = props;
+  console.log(houses);
+  const userHouse = [];
+  for (let i in houses){
+    if (houses[i].authorID.uid === auth.uid){
+    //  console.log(houses[i].authorID.uid);
+    //  console.log(auth.uid);
+      userHouse.push(houses[i].title);
+    }
+  }
+  console.log(userHouse);
+  if (auth.uid){
+
+    return(
+
+      <div className= "card-panel #bbdefb blue lighten-4 project-summary">
+        <h5> Hello {props.profile.firstName} {props.profile.lastName}!</h5>
+        <h6> Your Houses Listed </h6>
+        <ul>
+          {userHouse.map(item=> {
+            return <li className = "red-text"> {userHouse[0]} </li>
+          })}
+
+        </ul>
+
+
+      </div>
+
+    );
+  }else{
+
+    return(
+      <div> Sign In </div>
+
+    )
+  }
+
+
 
 }
 
-export default Notifications;
+
+
+const mapStateToProps = (state) =>{
+
+  return{
+    auth: state.firebase.auth,
+    profile: state.firebase.profile,
+    houses: state.firestore.ordered.houses
+  }
+
+}
+
+
+export default connect(mapStateToProps)(Notifications);
