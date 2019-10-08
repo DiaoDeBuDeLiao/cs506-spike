@@ -10,7 +10,7 @@ const NavBar = (props) => {
   //console.log(auth);
   const links = auth.uid ? <SignedInLinks profile = {profile}/> : <SignedOutLinks/>;
   return(
-  <nav className = "nav-wrapper grey darken-3">
+  <nav className = "nav-wrapper #b71c1c red darken-4">
     <div className = "container">
       <Link to="/" className = "brand-logo"> Roommate Finder </Link>
       {links}
