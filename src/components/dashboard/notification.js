@@ -1,6 +1,21 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import {connect} from 'react-redux'
+import {connect} from 'react-redux';
+import {getFirebase} from 'react-redux-firebase';
+
+
+function resetPass(user){
+
+      const firebase = getFirebase();
+      var auth = firebase.auth();
+      var emailAddress = user.email;
+
+      auth.sendPasswordResetEmail(emailAddress).then(function() {
+        // Email sent.
+      }).catch(function(error) {
+        // An error happened.
+      });
+}
 
 
 const Notifications = (props) => {
@@ -29,7 +44,7 @@ const Notifications = (props) => {
             return <li className = "red-text"> {userHouse[0]} </li>
           })}
         </ul>
-        <h6> Reset Password </h6>
+        <button className = "btn"> Reset Password </button>
 
 
 
@@ -39,13 +54,10 @@ const Notifications = (props) => {
   }else{
 
     return(
-      <div> Sign In </div>
+      <h6> No Account Signed in </h6>
 
     )
   }
-
-
-
 }
 
 

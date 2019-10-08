@@ -30,7 +30,7 @@ class SignUp extends Component{
     return(
 
       <div className = "container">
-        <form onSubmit={this.handleSubmit} className = "white">
+        <form onSubmit={this.handleSubmit} className = "#e3f2fd blue lighten-5">
           <h5 className = ""> Create Account </h5>
           <div className = "input-field">
             <label htmlFor = 'email'> Email </label>
