@@ -34,15 +34,15 @@ class SignIn extends Component{
         <form onSubmit={this.handleSubmit} className = "red lighten-5">
           <h5 className = ""> Login </h5>
           <div className = "input-field">
-            <label htmlFor = 'email'> Your Email </label>
+            <label htmlFor = 'userName'> Username </label>
             <input type = "email" id = "email" onChange = {this.handleChange}/>
           </div>
           <div className = "input-field">
-            <label htmlFor = 'email'> Your Password </label>
+            <label htmlFor = 'email'> Password </label>
             <input type = "password" id = "password" onChange = {this.handleChange}/>
           </div>
           <div className = "input-field">
-            <button className = "btn z-depth-0"> Login </button>
+            <button className = "btn blue"> Login </button>
             <div className = "red-text center">
             {authErr ? <p> {authErr} </p> : null}
             </div>
