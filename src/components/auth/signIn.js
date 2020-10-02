@@ -31,14 +31,14 @@ class SignIn extends Component{
     return(
 
       <div className = "container">
-        <form onSubmit={this.handleSubmit} className = "#e3f2fd blue lighten-5">
-          <h5 className = ""> Sign In </h5>
+        <form onSubmit={this.handleSubmit} className = "red lighten-5">
+          <h5 className = ""> Login </h5>
           <div className = "input-field">
-            <label htmlFor = 'email'> Email </label>
+            <label htmlFor = 'email'> Your Email </label>
             <input type = "email" id = "email" onChange = {this.handleChange}/>
           </div>
           <div className = "input-field">
-            <label htmlFor = 'email'> Password </label>
+            <label htmlFor = 'email'> Your Password </label>
             <input type = "password" id = "password" onChange = {this.handleChange}/>
           </div>
           <div className = "input-field">

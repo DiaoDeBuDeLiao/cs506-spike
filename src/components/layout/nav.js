@@ -12,7 +12,7 @@ const NavBar = (props) => {
   return(
   <nav className = "nav-wrapper #b71c1c red darken-4">
     <div className = "container">
-      <Link to="/" className = "brand-logo"> Roommate Finder </Link>
+      <Link to="/" className = "brand-logo"> Badger Hive Management System </Link>
       {links}
     </div>
   </nav>
