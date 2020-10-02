@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {createHive} from '../../store/actions/hiveActions'
 import {Redirect} from 'react-router-dom'
 
-class CreateHouse extends Component{
+class CreateHive extends Component{
 
   state = {
     hiveName: "",
@@ -100,4 +100,4 @@ const mapDispatchToProps = (dispatch) =>{
 
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(CreateHouse);
+export default connect(mapStateToProps,mapDispatchToProps)(CreateHive);

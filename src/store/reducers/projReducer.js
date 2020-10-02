@@ -17,7 +17,9 @@ const projReducer = (state = initState, action) => {
     case 'CREATE_PROJECT_ERROR':
       console.log("create house error", action.err);
       return state;
-
+    case 'CREATE_HIVE':
+      console.log("created hive", action.hive);
+      return state;
     default:
       return state;
 

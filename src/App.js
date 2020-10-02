@@ -5,6 +5,7 @@ import Dash from './components/dashboard/dash'
 import ProjDetails from './components/project/projectDetails'
 import SignIn from './components/auth/signIn';
 import SignUp from './components/auth/signUp';
+import CreateHive from './components/project/CreateHive';
 import CreateHouse from './components/project/CreateHouse';
 
 class App extends Component{
@@ -19,7 +20,7 @@ render() {
           <Route path = "/project/:id" component = {ProjDetails} />
           <Route path = "/signIn" component = {SignIn} />
           <Route path = "/signup" component = {SignUp} />
-          <Route path = "/createhouse" component = {CreateHouse} />
+          <Route path = "/createhive" component = {CreateHive} />
         </Switch>
       </div>
     </BrowserRouter>
