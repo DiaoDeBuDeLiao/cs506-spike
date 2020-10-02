@@ -6,7 +6,7 @@ export const createHive = (hive) => {
       const profile = getState().firebase.profile;
       const authId = getState().firebase.auth;
   
-      firestore.collection('houses').add({
+      firestore.collection('hives').add({
         ...hive,
         authorFirstName: profile.firstName,
         authorLastName: profile.lastName,

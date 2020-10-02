@@ -71,7 +71,7 @@ class CreateHive extends Component{
             <textarea onChange = {this.handleChange} id = "gains" className= "materialize-textarea"></textarea>
           </div>
           <div className = "input-field">
-            <button className = "btn z-depth-0"> Create Hive</button>
+            <button className = "btn z-depth-0" onClick={this.handleSubmit} > Create Hive</button>
           </div>
 
         </form>
