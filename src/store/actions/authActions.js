@@ -35,6 +35,7 @@ export const signOut = () => {
 export const signUp = (newUser) => {
   
     FireBase.storage().ref().child("Images/" + newUser.firstName + newUser.lastName).put(newUser.profilePic).then(()=>{
+
       console.log("success");
     })
     const image = FireBase.storage().ref().child('Images/' + newUser.firstName + newUser.lastName);
