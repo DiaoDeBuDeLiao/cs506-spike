@@ -35,11 +35,9 @@ export const signOut = () => {
 export const signUp = (newUser) => {
   
     FireBase.storage().ref().child("Images/" + newUser.firstName + newUser.lastName).put(newUser.profilePic).then(()=>{
-
       console.log("success");
     })
     const image = FireBase.storage().ref().child('Images/' + newUser.firstName + newUser.lastName);
-    let URL =""
     image.getDownloadURL().then((url) => { URL = url});
     return (dispatch, getState, {getFirebase, getFirestore}) => {
         const firebase = getFirebase()
@@ -52,7 +50,6 @@ export const signUp = (newUser) => {
             firstName: newUser.firstName,
             lastName: newUser.lastName,
             initials: newUser.firstName[0] + newUser.lastName[0],
-            profileURL: URL
         })
         }).then(() => {
         dispatch({ type: 'SIGNUP_SUCCESS' })

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {getFirebase} from 'react-redux-firebase';
-
+import FireBase from "firebase";
 
 function resetPass(user){
 
@@ -21,7 +21,6 @@ function resetPass(user){
 const Notifications = (props) => {
 
   const {auth, profile,hives} = props;
-  console.log(hives);
   const userHive = [];
   for (let i in hives){
     if (hives[i].authorID.uid === auth.uid){
@@ -33,11 +32,21 @@ const Notifications = (props) => {
 
 
   if (auth.uid){
+	var URL = ""
+	if(typeof props.profile.firstName !== "undefined" && typeof props.profile.lastName !== "undefined"){
+		console.log(props.profile.firstName)
+		FireBase.storage().ref().child("Images/" + props.profile.firstName + props.profile.lastName).getDownloadURL().then(function(downloadURL) {
+			URL = downloadURL
+			console.log('File available at', downloadURL)
+			document.getElementById("y").src=URL
+		})
+	}
 
     return(
 
       <div className= "card-panel #b2ebf2 cyan lighten-4 project-summary">
         <h5> Hello {props.profile.firstName} {props.profile.lastName}!</h5>
+		<a href="www.google.com" id="x"><img id="y" src="images/test.png" /></a>
         <h6> Your Hives Listed </h6>
         <ul>
           {userHive.map(item=> {
