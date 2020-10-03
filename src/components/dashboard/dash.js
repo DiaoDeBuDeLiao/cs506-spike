@@ -10,7 +10,7 @@ class Dash extends Component {
 
 
   render(){
-    console.log(this.props);
+  
     const {house, auth} = this.props;
 
 
@@ -36,7 +36,7 @@ class Dash extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state.firebase.auth);
+
   return{
     house: state.firestore.ordered.houses,
     auth: state.firebase.auth
