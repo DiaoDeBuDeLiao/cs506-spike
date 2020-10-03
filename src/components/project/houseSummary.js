@@ -12,7 +12,7 @@ const HouseSummary = ({project}) => {
       <div className = "card-content grey-text text-darken-3">
         <h4 className = "card-title">{project.title} </h4>
         <p> {project.descripton} </p>
-        <p> Posted By: {project.authorFirstName} {project.authorLastName}</p>
+        <p> Hive Name: {project.authorFirstName} {project.authorLastName}</p>
         <p className= "red-text"> Rent {project.price} </p>
       </div>
     </div>

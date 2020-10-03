@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import {Redirect} from 'react-router-dom'
-import {connect} from 'react-redux'
+import {Redirect} from 'react-router-dom';
+import {connect} from 'react-redux';
 import {signUp} from '../../store/actions/authActions';
+import './style.css';
 
 class SignUp extends Component{
 
@@ -29,8 +30,10 @@ class SignUp extends Component{
     }
     return(
 
-      <div className = "container">
-        <form onSubmit={this.handleSubmit} className = "#e3f2fd blue lighten-5">
+      <div className = "container h-100">
+      <div className = "d-flex justify-content-center">
+        <form onSubmit={this.handleSubmit} className = "user_card">
+        
           <h5 className = ""> Create Account </h5>
           <div className = "input-field">
             <label htmlFor = 'email'> Email </label>
@@ -49,14 +52,14 @@ class SignUp extends Component{
             <input type = "text" id = "lastName" onChange = {this.handleChange}/>
           </div>
           <div className = "input-field">
-            <button className = "btn z-depth-0"> Login </button>
+            <button className = "login_btn"> Login </button>
             <div className = "red-text center">
             {authErr ? <p> {authErr} </p> : null}
             </div>
           </div>
 
         </form>
-
+        </div>
       </div>
 
     )

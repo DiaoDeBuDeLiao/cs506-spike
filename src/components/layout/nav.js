@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import SignedInLinks from './signInLinks';
 import SignedOutLinks from './signoutLinks';
-import {connect} from 'react-redux'
+import {connect} from 'react-redux';
+import './style2.css';
 
 const NavBar = (props) => {
 
@@ -10,9 +11,9 @@ const NavBar = (props) => {
   //console.log(auth);
   const links = auth.uid ? <SignedInLinks profile = {profile}/> : <SignedOutLinks/>;
   return(
-  <nav className = "nav-wrapper #b71c1c red darken-4">
+  <nav className = "nav-wrapper #b71c1c red primary-2">
     <div className = "container">
-      <Link to="/" className = "brand-logo"> Badger Hive Management System </Link>
+      <Link to="/" className = "brand-logo" right> Badger Hive Management System </Link>
       {links}
     </div>
   </nav>

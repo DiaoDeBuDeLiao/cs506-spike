@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {createHive} from '../../store/actions/hiveActions'
-import {Redirect} from 'react-router-dom'
+import {createHive} from '../../store/actions/hiveActions';
+import {Redirect} from 'react-router-dom';
 
 class CreateHive extends Component{
 
@@ -36,7 +36,7 @@ class CreateHive extends Component{
     return(
 
       <div className = "container">
-        <form onSubmit={this.handleSubmit} className = "#e3f2fd blue lighten-5">
+        <form onSubmit={this.handleSubmit} className = "#e3f2fd yellow lighten-5">
           <h5 className = ""> Create Hive </h5>
           <div className = "input-field">
             <label htmlFor = 'hiveName'> HiveName </label>
