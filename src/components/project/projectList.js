@@ -1,6 +1,6 @@
 import React from 'react';
 import HouseSummary from './houseSummary';
-import {Link} from "react-router-dom"
+import {Link} from "react-router-dom";
 
 const ProjList = ({projects}) => {
 

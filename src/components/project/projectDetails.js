@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {firestoreConnect} from 'react-redux-firebase';
 import {compose} from 'redux';
-import {Redirect} from 'react-router-dom'
+import {Redirect} from 'react-router-dom';
 
 const ProjDetails = (props) => {
   const {house, auth} = props;
@@ -16,7 +16,7 @@ const ProjDetails = (props) => {
       <div className = " card z-depth-0">
         <div className = "card-content">
           <span className = "card-title"> {house.title}</span>
-          <p> {house.details} </p>
+          <p> {house.gains} </p>
 
         </div>
         <div className = 'card-action grey-lighten-4 grey-text'>

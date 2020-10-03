@@ -3,8 +3,8 @@ import Notifications from './notification';
 import ProjList from '../project/projectList';
 import {connect} from 'react-redux';
 import {firestoreConnect} from 'react-redux-firebase';
-import {compose} from 'redux'
-import {Redirect} from 'react-router-dom'
+import {compose} from 'redux';
+import {Redirect} from 'react-router-dom';
 
 class Dash extends Component {
 
