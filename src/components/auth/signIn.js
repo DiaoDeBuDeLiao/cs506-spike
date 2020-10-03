@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {signIn} from '../../store/actions/authActions';
-import {connect} from 'react-redux'
-import {Redirect} from 'react-router-dom'
-
+import {connect} from 'react-redux';
+import {Redirect} from 'react-router-dom';
+import './style.css';
 
 class SignIn extends Component{
 
@@ -30,8 +30,9 @@ class SignIn extends Component{
 
     return(
 
-      <div className = "container">
-        <form onSubmit={this.handleSubmit} className = "red lighten-5">
+      <div className = "container h-100">
+      <div className = "d-flex justify-content-center">
+        <form onSubmit={this.handleSubmit} className = "user_card">
           <h5 className = ""> Login </h5>
           <div className = "input-field">
             <label htmlFor = 'userName'> Username </label>
@@ -42,14 +43,14 @@ class SignIn extends Component{
             <input type = "password" id = "password" onChange = {this.handleChange}/>
           </div>
           <div className = "input-field">
-            <button className = "btn blue"> Login </button>
+            <button className = "login_btn"> Login </button>
             <div className = "red-text center">
             {authErr ? <p> {authErr} </p> : null}
             </div>
           </div>
 
         </form>
-
+      </div>
       </div>
 
     )

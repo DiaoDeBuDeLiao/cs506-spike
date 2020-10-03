@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import {Redirect} from 'react-router-dom'
-import {connect} from 'react-redux'
+import {Redirect} from 'react-router-dom';
+import {connect} from 'react-redux';
 import {signUp} from '../../store/actions/authActions';
+import './style.css';
 
 class SignUp extends Component{
 
@@ -36,8 +37,10 @@ class SignUp extends Component{
     }
     return(
 
-      <div className = "container">
-        <form onSubmit={this.handleSubmit} className = "#e3f2fd blue lighten-5">
+      <div className = "container h-100">
+      <div className = "d-flex justify-content-center">
+        <form onSubmit={this.handleSubmit} className = "user_card">
+        
           <h5 className = ""> Create Account </h5>
           <div className = "input-field">
             <label htmlFor = 'email'> Email </label>
@@ -56,6 +59,7 @@ class SignUp extends Component{
             <input type = "text" id = "lastName" onChange = {this.handleChange}/>
           </div>
           <div className = "input-field">
+
             <div>Upload Image</div>
             <input type = "file" id = "profilePic" onChange = {this.handleFileChange}/>
           </div>
@@ -67,7 +71,7 @@ class SignUp extends Component{
           </div>
 
         </form>
-
+        </div>
       </div>
 
     )

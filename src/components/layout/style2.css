@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Mukta');
+body{
+  font-family: 'Mukta', sans-serif;
+	height:100vh;
+	min-height:550px;
+	background-image: url(./honey_bee.jpg);
+	background-repeat: no-repeat;
+	background-size:cover;		
+    overflow-y: hidden;
+}
