@@ -34,9 +34,13 @@ export const signOut = () => {
 
 export const signUp = (newUser) => {
   
-    FireBase.storage().ref().child("Images/hello" + newUser.email).put(newUser.profilePic).then(()=>{
+    FireBase.storage().ref().child("Images/" + newUser.firstName + newUser.lastName).put(newUser.profilePic).then(()=>{
+
       console.log("success");
     })
+    const image = FireBase.storage().ref().child('Images/' + newUser.firstName + newUser.lastName);
+    let URL =""
+    image.getDownloadURL().then((url) => { URL = url});
     return (dispatch, getState, {getFirebase, getFirestore}) => {
         const firebase = getFirebase()
         const firestore = getFirestore()
@@ -47,7 +51,8 @@ export const signUp = (newUser) => {
         return firestore.collection('users').doc(response.user.uid).set({
             firstName: newUser.firstName,
             lastName: newUser.lastName,
-            initials: newUser.firstName[0] + newUser.lastName[0]
+            initials: newUser.firstName[0] + newUser.lastName[0],
+            profileURL: URL
         })
         }).then(() => {
         dispatch({ type: 'SIGNUP_SUCCESS' })
