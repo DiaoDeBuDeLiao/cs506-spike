@@ -6,7 +6,7 @@ import ProjDetails from './components/project/projectDetails'
 import SignIn from './components/auth/signIn';
 import SignUp from './components/auth/signUp';
 import CreateHive from './components/project/CreateHive';
-import CreateHouse from './components/project/CreateHouse';
+
 
 class App extends Component{
 

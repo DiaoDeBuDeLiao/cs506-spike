@@ -9,13 +9,20 @@ class SignUp extends Component{
     email: "",
     password: "",
     firstName: "",
-    lastName: ""
+    lastName: "",
+    profilePic: ""
   }
 
   handleChange = (e) =>{
     this.setState({
       [e.target.id]: e.target.value
     });
+  }
+  handleFileChange = (e) => {
+    e.preventDefault()
+    this.setState({
+      profilePic: document.getElementById('profilePic').files[0]
+    })
   }
   handleSubmit = (e) =>{
     e.preventDefault();
@@ -49,7 +56,11 @@ class SignUp extends Component{
             <input type = "text" id = "lastName" onChange = {this.handleChange}/>
           </div>
           <div className = "input-field">
-            <button className = "btn z-depth-0"> Login </button>
+            <div>Upload Image</div>
+            <input type = "file" id = "profilePic" onChange = {this.handleFileChange}/>
+          </div>
+          <div className = "input-field">
+            <button className = "btn z-depth-0" onClick={this.handleSubmit}> Login </button>
             <div className = "red-text center">
             {authErr ? <p> {authErr} </p> : null}
             </div>

@@ -1,18 +1,22 @@
+import { getFirebase } from "react-redux-firebase";
+import FireBase from "firebase";
 export const signIn = (credentials) =>{
+  
   return(dispatch, getState, {getFirebase}) =>{
-    const firebase = getFirebase();
-
-    firebase.auth().signInWithEmailAndPassword(
-      credentials.email,
-      credentials.password
-    ).then(() =>{
-      dispatch({type: 'LOGIN_SUCCESS'})
-    }
-  ).catch((err)=>{
-    dispatch({type: 'LOGIN_ERR', err})
-  });
-  }
-
+    
+    
+      const firebase = getFirebase();
+      firebase.auth().signInWithEmailAndPassword(
+        credentials.email,
+        credentials.password
+      ).then(() =>{
+        dispatch({type: 'LOGIN_SUCCESS'})
+      }
+    ).catch((err)=>{
+      dispatch({type: 'LOGIN_ERR', err})
+    });
+  
+ }
 }
 
 export const signOut = () => {
@@ -29,10 +33,13 @@ export const signOut = () => {
 }
 
 export const signUp = (newUser) => {
+  
+    FireBase.storage().ref().child("Images/hello").put(newUser.profilePic).then(()=>{
+      console.log("success");
+    })
     return (dispatch, getState, {getFirebase, getFirestore}) => {
         const firebase = getFirebase()
         const firestore = getFirestore()
-
         firebase.auth().createUserWithEmailAndPassword(
         newUser.email,
         newUser.password
