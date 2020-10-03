@@ -5,22 +5,22 @@ import {compose} from 'redux';
 import {Redirect} from 'react-router-dom';
 
 const ProjDetails = (props) => {
-  const {house, auth} = props;
+  const {hive, auth} = props;
 
   if (!auth.uid){
     return <Redirect to='/signin'/>
   }
-  if (house){
+  if (hive){
     return(
     <div className = "container section project-details">
       <div className = " card z-depth-0">
         <div className = "card-content">
-          <span className = "card-title"> {house.title}</span>
-          <p> {house.gains} </p>
+          <span className = "card-title"> {hive.title}</span>
+          <p> {hive.gains} </p>
 
         </div>
         <div className = 'card-action grey-lighten-4 grey-text'>
-          <div> Posted By {house.authorFirstName} {house.authorLastName} </div>
+          <div> Posted By {hive.authorFirstName} {hive.authorLastName} </div>
         </div>
       </div>
 
@@ -40,10 +40,10 @@ const ProjDetails = (props) => {
 const mapStateToProps = (state, oProps) => {
 //  console.log(state);
   const id = oProps.match.params.id;
-  const houses = state.firestore.data.houses;
-  const house = houses ? houses[id] : null
+  const hives = state.firestore.data.hives;
+  const hive = hives ? hives[id] : null
   return {
-    house: house,
+    hive: hive,
     auth: state.firebase.auth
   }
 }
@@ -51,7 +51,7 @@ const mapStateToProps = (state, oProps) => {
 export default compose(
   connect(mapStateToProps),
   firestoreConnect([
-    {collection: 'houses'}
+    {collection: 'hives'}
   ])
 
 )(ProjDetails)

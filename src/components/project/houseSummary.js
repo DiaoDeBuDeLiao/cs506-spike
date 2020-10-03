@@ -4,7 +4,7 @@ import {firestoreConnect} from 'react-redux-firebase';
 import {compose} from 'redux';
 import {moment} from 'moment';
 
-const HouseSummary = ({project}) => {
+const HiveSummary = ({project}) => {
 
   return(
 
@@ -22,4 +22,4 @@ const HouseSummary = ({project}) => {
 
 }
 
-export default HouseSummary;
+export default HiveSummary;

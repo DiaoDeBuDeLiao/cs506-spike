@@ -11,7 +11,7 @@ class Dash extends Component {
 
   render(){
   
-    const {house, auth} = this.props;
+    const {hive, auth} = this.props;
 
 
     return(
@@ -19,7 +19,7 @@ class Dash extends Component {
       <div className = "dashboard container">
         <div className = "row">
           <div className = "col s12 m6">
-            <ProjList projects = {house}/>
+            <ProjList projects = {hive}/>
           </div>
             <div className = "col s12 m5 offset-m1">
               <Notifications/>
@@ -38,7 +38,7 @@ class Dash extends Component {
 const mapStateToProps = (state) => {
 
   return{
-    house: state.firestore.ordered.houses,
+    hive: state.firestore.ordered.hives,
     auth: state.firebase.auth
 
   }
@@ -47,6 +47,6 @@ const mapStateToProps = (state) => {
 export default compose(
   connect(mapStateToProps),
   firestoreConnect([
-    {collection: 'houses'}
+    {collection: 'hives'}
   ])
 )(Dash)

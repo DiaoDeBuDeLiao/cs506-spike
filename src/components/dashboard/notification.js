@@ -20,14 +20,14 @@ function resetPass(user){
 
 const Notifications = (props) => {
 
-  const {auth, profile,houses} = props;
-  console.log(houses);
-  const userHouse = [];
-  for (let i in houses){
-    if (houses[i].authorID.uid === auth.uid){
-    //  console.log(houses[i].authorID.uid);
+  const {auth, profile,hives} = props;
+  console.log(hives);
+  const userHive = [];
+  for (let i in hives){
+    if (hives[i].authorID.uid === auth.uid){
+    //  console.log(hives[i].authorID.uid);
     //  console.log(auth.uid);
-      userHouse.push(houses[i].title);
+      userHive.push(hives[i].title);
     }
   }
 
@@ -38,10 +38,10 @@ const Notifications = (props) => {
 
       <div className= "card-panel #b2ebf2 cyan lighten-4 project-summary">
         <h5> Hello {props.profile.firstName} {props.profile.lastName}!</h5>
-        <h6> Your Houses Listed </h6>
+        <h6> Your Hives Listed </h6>
         <ul>
-          {userHouse.map(item=> {
-            return <li className = "red-text"> {userHouse[0]} </li>
+          {userHive.map(item=> {
+            return <li className = "red-text"> {userHive[0]} </li>
           })}
         </ul>
         <button className = "btn"> Reset Password </button>
@@ -67,7 +67,7 @@ const mapStateToProps = (state) =>{
   return{
     auth: state.firebase.auth,
     profile: state.firebase.profile,
-    houses: state.firestore.ordered.houses
+    hives: state.firestore.ordered.hives
   }
 
 }
